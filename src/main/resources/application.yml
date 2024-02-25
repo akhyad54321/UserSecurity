@@ -1,0 +1,21 @@
+server:
+  port: 8081
+
+spring:
+  application:
+    name: USER-SECURITY
+  datasource:
+    url: jdbc:mysql://localhost:3306/user_security
+    username: root
+    password: abc123
+    driverClassName: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        ddl-auto: none
+        format_sql: true
+        dialect: org.hibernate.dialect.MySQL8Dialect
