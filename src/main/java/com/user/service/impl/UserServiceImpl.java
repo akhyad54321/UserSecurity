@@ -56,7 +56,7 @@ public class UserServiceImpl implements IUserService {
         }
         User updateUser = optionalUser.get();
         updateUser.setName(user.getName());
-        updateUser.setContactNo(user.getContactNo());
+        updateUser.setContact(user.getContact());
         updateUser.setUsername(user.getUsername());
         updateUser.setPassword(user.getPassword());
         updateUser.setRole(user.getRole());

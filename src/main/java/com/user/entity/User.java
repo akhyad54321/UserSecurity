@@ -20,7 +20,7 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     int id;
     String name;
-    String contactNo;
+    String contact;
     String username;
     String password;
     String role;

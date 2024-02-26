@@ -9,6 +9,6 @@ import java.util.Optional;
 @Repository
 public interface UserRepository extends CrudRepository<User, Integer> {
     Optional<User> findByUsername(String userName);
-    Optional<User> findByContactNo(String contactNo);
+    Optional<User> findByContact(String contactNo);
 
 }
