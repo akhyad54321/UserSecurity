@@ -5,6 +5,7 @@ import com.user.service.IUserService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -16,10 +17,15 @@ public class UserController {
     @Autowired
     private IUserService userService;
 
+    @Autowired
+    private BCryptPasswordEncoder bCryptPasswordEncoder;
+
     @PostMapping
     @PreAuthorize("hasRole('ADMIN')")
     public User createUser(@RequestBody User user){
         log.info("UserController - Inside createUser method");
+        User user1 = new User();
+        user1.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
         return userService.createUser(user);
     }
 
