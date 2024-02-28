@@ -21,7 +21,7 @@ public class UserController {
     private BCryptPasswordEncoder bCryptPasswordEncoder;
 
     @PostMapping
-    @PreAuthorize("hasRole('ADMIN')")
+//    @PreAuthorize("hasRole('ADMIN')")
     public User createUser(@RequestBody User user){
         log.info("UserController - Inside createUser method");
         User user1 = new User();
@@ -30,6 +30,7 @@ public class UserController {
     }
 
     @GetMapping
+//    @PreAuthorize("hasRole('USER')")
     public List<User> getAllUser(){
         log.info("UserController - Inside getAllUser method");
         return userService.getAllUser();
